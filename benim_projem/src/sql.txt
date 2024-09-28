@@ -1,0 +1,44 @@
+sql kodlarım/
+│
+│
+├──CREATE TABLE locations (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  geom GEOGRAPHY(POINT, 4326)
+);
+DROP TABLE locations;
+
+CREATE TABLE sehir_sicakliklari (
+  id SERIAL PRIMARY KEY,
+  isim VARCHAR(100),
+  geom GEOGRAPHY(POINT, 4326),
+  sicaklik FLOAT 
+);
+INSERT INTO sehir_sicakliklari (isim, geom, sicaklik) VALUES
+('Adana', ST_SetSRID(ST_MakePoint(35.3213, 37.0022), 4326), 35.0),  
+('Adıyaman', ST_SetSRID(ST_MakePoint(38.2768, 37.7644), 4326), 32.0),  
+('Afyonkarahisar', ST_SetSRID(ST_MakePoint(30.5491, 38.7567), 4326), 30.0),
+('Ağrı', ST_SetSRID(ST_MakePoint(42.7028, 39.7191), 4326), 25.0),
+('Aksaray', ST_SetSRID(ST_MakePoint(34.0209, 38.3704), 4326), 29.0),   
+('Antalya', ST_SetSRID(ST_MakePoint(30.6934, 36.8841), 4326), 36.0),
+('Aydın', ST_SetSRID(ST_MakePoint(27.8464, 37.8472), 4326), 31.0), 
+('Balıkesir', ST_SetSRID(ST_MakePoint(27.8873, 39.6477), 4326), 28.0),
+('Bursa', ST_SetSRID(ST_MakePoint(29.0688, 40.1826), 4326), 27.0), 
+('Çorum', ST_SetSRID(ST_MakePoint(34.9550, 40.5490), 4326), 26.0),
+('Denizli', ST_SetSRID(ST_MakePoint(29.0860, 37.7730), 4326), 30.0),
+('Eskişehir', ST_SetSRID(ST_MakePoint(30.5216, 39.7767), 4326), 24.0),
+('Gaziantep', ST_SetSRID(ST_MakePoint(37.0662, 37.3833), 4326), 34.0),
+('İstanbul', ST_SetSRID(ST_MakePoint(28.9784, 41.0082), 4326), 26.0),
+('İzmir', ST_SetSRID(ST_MakePoint(27.1454, 38.4192), 4326), 33.0),
+('Kahramanmaraş', ST_SetSRID(ST_MakePoint(37.5738, 37.5738), 4326), 31.0),
+('Karaman', ST_SetSRID(ST_MakePoint(33.2172, 37.1750), 4326), 29.0),
+('Kars', ST_SetSRID(ST_MakePoint(40.6034, 40.6168), 4326), 22.0),
+('Kayseri', ST_SetSRID(ST_MakePoint(35.4853, 38.7322), 4326), 28.0),
+('Konya', ST_SetSRID(ST_MakePoint(32.6626, 37.8662), 4326), 27.0),
+('Kocaeli', ST_SetSRID(ST_MakePoint(30.1594, 40.7657), 4326), 26.0),
+('Manisa', ST_SetSRID(ST_MakePoint(27.4280, 38.6195), 4326), 30.0),
+('Mardin', ST_SetSRID(ST_MakePoint(40.7378, 37.3159), 4326), 32.0),
+('Mersin', ST_SetSRID(ST_MakePoint(34.6400, 36.8130), 4326), 33.0),
+('Ordu', ST_SetSRID(ST_MakePoint(37.8767, 40.9878), 4326), 25.0),
+('Samsun', ST_SetSRID(ST_MakePoint(36.33, 41.29), 4326), 27.0),
+('Şanlıurfa', ST_SetSRID(ST_MakePoint(37.1662, 37.3666), 4326), 34.0);
